@@ -11,7 +11,7 @@
     "angularjs"
   ],
   "author": "Jooho Lee",
-  "license": "Apache-2.0",
+  "license": "GNU v3",
   "dependencies": {
     "body-parser": "^1.17.1",
     "ejs": "^2.5.6",
