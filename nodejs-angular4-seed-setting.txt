@@ -1,0 +1,75 @@
+mkdir nodejs-angularjs4-seed
+
+npm init
+
+npm install express body-parser ejs mongojs --save
+
+npm install nodemon --save-dev
+
+1. server.js
+
+
+2. routes folder
+2.1. index.js
+2.2. tasks.js
+
+3. client folder
+mkdir client 
+
+4. Angular Integration (https://angular.io/docs/ts/latest/guide/setup.html)
+4.1. setup angular
+git clone https://github.com/angular/quickstart.git quickstart
+cd quickstart
+npm install
+npm start
+
+4.2. Copy angularjs
+cp package.json tslint.json ../nodejs-angularjs4-seed/client
+cd src/
+cp src/systemjs-angular-loader.js src/systemjs.config.js src/tsconfig.json src/styles.css ../../nodejs-angularjs4-seed/client/.
+
+
+
+4.3. Change files
+package.json ==> title/description
+
+
+4.4. Create app folder
+mkdir app
+
+4.5. copy component/module/main.ts/index.html
+cp src/tsconfig.json  ../nodejs-angularjs4-seed/client/app/.
+cp src/app/app.component.ts  src/app/app.module.ts ../nodejs-angularjs4-seed/client/app/.
+cp src/main.ts ../nodejs-angularjs4-seed/client/app/.
+cp src/index.html ../nodejs-angularjs4-seed/views/. 
+
+4.6. replace 'src' to 'app' on package.json
+
+4.7. download library
+cd nodejs-angularjs4-seed/client
+npm install
+
+4.8. Change main.js path
+System.import('main.js').catch(function(err){ console.error(err); }); ==>  System.import('app/main.js').catch(function(err){ console.error(err); });
+
+5. Bower setting
+
+5.1. create .bowerrc
+{
+  "directory": "client/bower_components"
+}
+
+5.2. install bower/bootstrap
+npm install bower --save-dev
+bower install bootstrap
+
+5.3. add css
+
+==> <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
+
+https://www.youtube.com/watch?v=PFP0oXNNveg
